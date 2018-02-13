@@ -51,7 +51,6 @@
 
 
 window.onload = start;
-console.log("before global");
 var boxes = document.getElementsByTagName("td");
 var turnText = document.querySelector(".playerTurn");
 var counter = 1;
@@ -63,15 +62,12 @@ var winningCombinations = [[0,1,2],[3,4,5],[6,7,8],
 	[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
 function start(){
-	console.log("just before methods call");
 	addXandOListener();
 	addResetListener();
-	console.log("windows loaded");
 }
 
 
 function addXandOListener(){
-	console.log("inside method call");
 	for (var i = boxes.length - 1; i >= 0; i--) {
 		boxes[i].addEventListener("click", addXorO);
 	}
