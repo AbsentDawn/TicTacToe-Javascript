@@ -1,5 +1,5 @@
 {
-  "name": "my-test-proj",
+  "name": "tictactoe",
   "version": "1.0.0",
   "description": "To test eslint",
   "main": "script.js",
@@ -9,9 +9,9 @@
   "author": "Paul Shan",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^3.16.1"
+    "eslint": "^3.16.1",
     "pre-commit": "^1.2.2"
-  }, 
+  },
   "pre-commit": [
     "test"
   ]
