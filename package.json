@@ -1,18 +1,41 @@
 {
-  "name": "tictactoe",
-  "version": "1.0.0",
-  "description": "To test eslint",
-  "main": "script.js",
+  "name": "airbnb-style",
+  "version": "2.0.0",
+  "description": "A mostly reasonable approach to JavaScript.",
   "scripts": {
-    "test": "eslint ."
+    "preinstall": "npm run install:config && npm run install:config:base",
+    "install:config": "cd packages/eslint-config-airbnb && npm prune && npm install",
+    "install:config:base": "cd packages/eslint-config-airbnb-base && npm prune && npm install",
+    "pretest": "npm run --silent lint",
+    "test": "npm run --silent test:config && npm run --silent test:config:base",
+    "test:config": "cd packages/eslint-config-airbnb; npm test",
+    "test:config:base": "cd packages/eslint-config-airbnb-base; npm test",
+    "pretravis": "npm run --silent lint",
+    "travis": "npm run --silent travis:config && npm run --silent travis:config:base",
+    "travis:config": "cd packages/eslint-config-airbnb; npm run travis",
+    "travis:config:base": "cd packages/eslint-config-airbnb-base; npm run travis"
   },
-  "author": "Paul Shan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/airbnb/javascript.git"
+  },
+  "keywords": [
+    "style guide",
+    "lint",
+    "airbnb",
+    "es6",
+    "es2015",
+    "react",
+    "jsx"
+  ],
+  "author": "Harrison Shoff <hi@hshoff.com> (https://twitter.com/hshoff)",
   "license": "MIT",
-  "devDependencies": {
-    "eslint": "^3.16.1",
-    "pre-commit": "^1.2.2"
+  "bugs": {
+    "url": "https://github.com/airbnb/javascript/issues"
   },
-  "pre-commit": [
-    "test"
-  ]
+  "homepage": "https://github.com/airbnb/javascript",
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "git-pre-push": "0.0.5"
+  }
 }

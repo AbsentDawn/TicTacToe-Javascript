@@ -54,7 +54,7 @@ window.onload = start;
 var boxes = document.getElementsByTagName("td");
 var turnText = document.querySelector(".playerTurn");
 var counter = 1;
-var winCounter = 0
+var winCounter = 0;
 var OMoves = [];
 var XMoves = [];
 
